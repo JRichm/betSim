@@ -7,7 +7,7 @@ class Simulation:
     def __init__(self, window_instance):
         self.window = window_instance
         self.border_size = 50
-        self.num_birds = 200
+        self.num_birds = 25
         self.sim_birds = []
 
         self.spawn_birds()

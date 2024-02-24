@@ -1,18 +1,24 @@
 import pygame
 import math
+import random
 
 class Bird:
     def __init__(self, position, direction, window_instance):
         self.position = position
         self.direction = direction
         self.window =  window_instance
-        self.speed = 5
+        self.speed = 3
 
         self.x_border_enter_angle = None
         self.y_border_enter_angle = None
 
-        self.sprite = pygame.Surface((5, 5))
-        self.sprite.fill("Green")
+        self.sprite = pygame.Surface((3, 3))
+
+        rValue = random.randint(0, 255)
+        gValue = random.randint(0, 255)
+        bValue = random.randint(0, 255)
+
+        self.sprite.fill((rValue, gValue, bValue))
 
     def update(self, all_birds, avg_position, avg_direction):
         self.move_bird(all_birds, avg_position, avg_direction)
@@ -49,7 +55,7 @@ class Bird:
             self.direction[1] = -self.direction[1]
 
     def calculate_separation_force(self, all_birds):
-        separation_radius = 100
+        separation_radius = 20
         separation_strength = 0.8
 
         separation_vector = [0, 0]

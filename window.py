@@ -5,7 +5,7 @@ from sim import Simulation
 class Window:
     def __init__(self, width, height, fps):
         pygame.init()
-        self.clock = pygame.time.Clock()
+        # self.clock = pygame.time.Clock()
 
         self.running = True
         self.height = height
@@ -18,7 +18,7 @@ class Window:
         self.draw_surface = pygame.Surface((width, height))
         self.black_surface = pygame.Surface((width, height), pygame.SRCALPHA)
         self.black_surface.fill((0, 0, 0))
-        self.black_surface.set_alpha(50)
+        self.black_surface.set_alpha(3)
 
         self.simulation = Simulation(self)
 
@@ -35,7 +35,7 @@ class Window:
         self.screen.blit(self.draw_surface, (0, 0))
 
         pygame.display.flip()
-        self.clock.tick(self.fps)
+        # self.clock.tick(self.fps)
 
     def quit(self):
         pygame.quit()

@@ -7,12 +7,12 @@ class Bird:
         self.position = position
         self.direction = direction
         self.window =  window_instance
-        self.speed = 3
+        self.speed = 1
 
         self.x_border_enter_angle = None
         self.y_border_enter_angle = None
 
-        self.sprite = pygame.Surface((3, 3))
+        self.sprite = pygame.Surface((10, 10))
 
         rValue = random.randint(0, 255)
         gValue = random.randint(0, 255)
@@ -80,7 +80,7 @@ class Bird:
         cohesion_vector = [avg_position[0] - self.position[0], avg_position[1] - self.position[1]]
 
         distance = math.sqrt(cohesion_vector[0]**2 + cohesion_vector[1]**2)
-        cohesion_strength = 0.05
+        cohesion_strength = 0.01
         cohesion_force = [cohesion_vector[0] * cohesion_strength / distance,
                           cohesion_vector[1] * cohesion_strength / distance]
 
@@ -91,7 +91,7 @@ class Bird:
         alignment_force = [avg_direction[0] - self.direction[0], avg_direction[1] - self.direction[1]]
 
         magnitude = math.sqrt(alignment_force[0]**2 + alignment_force[1]**2)
-        alignment_strength = 0.15
+        alignment_strength = 0.05
         alignment_force = [alignment_force[0] * alignment_strength / magnitude,
                            alignment_force[1] * alignment_strength / magnitude]
         

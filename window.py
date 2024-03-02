@@ -18,7 +18,7 @@ class Window:
         self.draw_surface = pygame.Surface((width, height))
         self.black_surface = pygame.Surface((width, height), pygame.SRCALPHA)
         self.black_surface.fill((0, 0, 0))
-        self.black_surface.set_alpha(3)
+        self.black_surface.set_alpha(1)
 
         self.simulation = Simulation(self)
 

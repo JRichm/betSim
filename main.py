@@ -1,8 +1,8 @@
 from window import Window
 from sim import Simulation
 
-screen_width = 1800
-screen_height = 980
+screen_width = 1280
+screen_height = 720
 fps = 60
 
 window = Window(screen_width, screen_height, fps)

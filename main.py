@@ -1,5 +1,4 @@
 from window import Window
-from sim import Simulation
 
 screen_width = 1280
 screen_height = 720
